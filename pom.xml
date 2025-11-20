@@ -6,7 +6,6 @@
   <packaging>war</packaging>
   <version>1.0</version>
   <name>javaee-spring Maven Webapp</name>
-  <url>http://maven.apache.org</url>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -14,11 +13,24 @@
 
         <spring.version>5.3.39</spring.version>
         <spring.security.version>5.8.12</spring.security.version>
-        <!--<servlet.api.version>4.0.1</servlet.api.version>
-        <jstl.version>1.2</jstl.version>-->
     </properties>
 
     <dependencies>
+
+        <!-- JavaEE -->
+        <dependency>
+            <groupId>jakarta.servlet</groupId>
+            <artifactId>jakarta.servlet-api</artifactId>
+            <version>5.0.0</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>jakarta.servlet.jsp.jstl</groupId>
+            <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+            <version>2.0.0-RC1</version>
+            <scope>provided</scope>
+        </dependency>
 
         <!-- SPRING CORE -->
         <dependency>
@@ -47,26 +59,42 @@
             <version>${spring.security.version}</version>
         </dependency>
 
-        <!-- SERVLET API (provided pelo servidor)
+        <!-- BCrypt -->
         <dependency>
-            <groupId>jakarta.servlet</groupId>
-            <artifactId>jakarta.servlet-api</artifactId>
-            <version>${servlet.api.version}</version>
-            <scope>provided</scope>
-        </dependency>-->
-
-        <!-- Para JSP (opcional)
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>jstl</artifactId>
-            <version>${jstl.version}</version>
-        </dependency>-->
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-crypto</artifactId>
+            <version>${spring.security.version}</version>
+        </dependency>
 
         <!-- JSON para API REST -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
             <version>2.17.2</version>
+        </dependency>
+
+        <!-- JPA & Hibernate -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>5.3.23.Final</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- JPA API -->
+        <dependency>
+            <groupId>jakarta.persistence</groupId>
+            <artifactId>jakarta.persistence-api</artifactId>
+            <version>3.0.0</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- PostgreSQL -->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.7.7</version>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>

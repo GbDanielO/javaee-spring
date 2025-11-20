@@ -1,0 +1,30 @@
+##Estrutura base do Projeto:
+
+projeto/
+ ├─ pom.xml
+ ├─ src/main/java/
+ │   └─ br/com/comercial/
+ │         ├─ config/
+ │         │     Arquivos de configuração
+ │         ├─ controller/
+ │         │     Controllers REST
+ │         └─ model/
+ │         └─ repository/
+ │         └─ util/
+ │         └─ etc /     -- Outros pacotes
+ ├─ src/main/resources/
+ │   └─ META-INF/
+ │         └─ persistence.xml
+ ├─ src/main/webapp/
+ │   ├─ WEB-INF/
+ │   │    ├─ web.xml
+ │   │    ├─ beans.xml  -- JPA / Hibernate precisam porque usam CDI
+ │   │    └─ spring/
+ │   │         ├─ application-context.xml
+ │   │         └─ spring-security.xml
+ │   ├─ index.html
+ │   └─ js/
+ │        └─ jquery-3.7.1.min.js
+ │        └─ Arquivos .js
+ │   └─ css/
+ │        └─ Arquivos .css
